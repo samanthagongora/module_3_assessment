@@ -7,7 +7,6 @@ class BestBuyService
   def find_stores
     response = @conn.get(get_url_stores)
     stores = JSON.parse(response.body, :symbolize_names => true)[:stores]
-    total_stores = JSON.parse(response.body, :symbolize_names => true)[:total]
   end
 
   def get_url_stores
