@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Iser can search for Best Buy stores" do
+RSpec.describe "User can search for Best Buy stores" do
   scenario "and return stores within 25 miles" do
     VCR.use_cassette("user_can_search_best_buy_stores_spec.rb") do
 
