@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.request "As a user I can make an API call to Items" do
+RSpec.describe "As a user I can make an API call to Items" do
   scenario "and I can see all items ids, names, descriptions, and image_url" do
     items = create_list(:item, 7)
     get '/api/v1/items'
