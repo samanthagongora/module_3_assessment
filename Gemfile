@@ -14,6 +14,7 @@ gem "less-rails-bootstrap"
 gem "minitest-rails"
 gem "faraday"
 gem "figaro"
+gem "rails-api"
 
 group :development do
   gem "spring"

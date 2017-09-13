@@ -1,6 +1,5 @@
-class Api::V1::ItemsController < ApplicationController
+class Api::V1::ItemsController < API::V1::ApplicationController
   def index
-    items = Item.all
-    render json: { items.as_json(except: [:created_at, :updated_at]) }
+    render json: Item.all
   end
 end
