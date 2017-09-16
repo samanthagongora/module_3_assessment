@@ -14,7 +14,7 @@ RSpec.describe "Best Buy Service" do
           expect(store[:longName]).to be_a String
           expect(store[:city]).to be_a String
           expect(store[:distance]).to be_a Float
-          expect(store[:phone]).to be_a Integer
+          expect(store[:phone]).to be_a String
           expect(store[:storeType]).to be_a String
         end
       end
