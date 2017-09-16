@@ -12,9 +12,9 @@ class Api::V1::ItemsController < API::V1::ApplicationController
     render status: 201, json: Item.create(item_params), except: [:created_at, :updated_at]
   end
 
-  def delete
+  def destroy
     item = Item.find(params[:id])
-    render status: 204, json: Item.destroy(item.id), except: [:created_at, :updated_at]
+    render status: 204, json: Item.destroy(item.id)
   end
 
   private
