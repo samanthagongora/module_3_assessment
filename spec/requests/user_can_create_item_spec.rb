@@ -6,13 +6,13 @@ RSpec.describe "User can make POST request to items" do
 
     expect(response).to be_successful
 
-    response = JSON.parse(response.body)
+    item = JSON.parse(response.body)
 
-    expect(response["id"]).to_not be_nil
-    expect(response["name"]).to_not be_nil
-    expect(response["description"]).to_not be_nil
-    expect(response["image_url"]).to_not be_nil
-    expect(response["created_at"]).to be_nil
-    expect(response["updated_at"]).to be_nil
+    expect(item["id"]).to_not be_nil
+    expect(item["name"]).to_not be_nil
+    expect(item["description"]).to_not be_nil
+    expect(item["image_url"]).to_not be_nil
+    expect(item["created_at"]).to be_nil
+    expect(item["updated_at"]).to be_nil
   end
 end
