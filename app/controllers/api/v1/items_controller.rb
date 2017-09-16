@@ -9,10 +9,7 @@ class Api::V1::ItemsController < API::V1::ApplicationController
   end
 
   def create
-    item = Item.new(item_params)
-    if item.save
-      redirect_to api_v1_item_path(item)
-    end
+    render json: Item.create(item_params)
   end
 
   private
@@ -20,5 +17,4 @@ class Api::V1::ItemsController < API::V1::ApplicationController
   def item_params
     params.require(:item).permit(:name, :description, :image_url)
   end
-
 end
