@@ -1,0 +1,23 @@
+require "rails_helper"
+
+RSpec.describe "Best Buy Service" do
+  context "class methods" do
+    context ".find_stores" do
+      it "finds stores by zipcode" do
+        VCR.use_cassette("service_can_return_data_spec.rb") do
+          zipcode = 80203
+          stores = BestBuyService.find_stores(zipcode)
+          store = stores.first
+
+          expect(stores.count).to eq(10)
+
+          expect(store[:longName]).to be_a String
+          expect(store[:city]).to be_a String
+          expect(store[:distance]).to be_a Float
+          expect(store[:phone]).to be_a Integer
+          expect(store[:storeType]).to be_a String
+        end
+      end
+    end
+  end
+end

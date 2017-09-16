@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe "User can search for Best Buy stores" do
   scenario "and return stores within 25 miles" do
     VCR.use_cassette("user_can_search_best_buy_stores_spec.rb") do
-
       visit root_path
 
       fill_in 'q', with: "80202"
