@@ -1,11 +1,11 @@
 class Api::V1::ItemsController < API::V1::ApplicationController
   def index
-    render json: Item.all
+    render json: Item.all, except: [:created_at, :updated_at]
   end
 
   def show
     item = Item.find(params[:id])
-    render json: item
+    render json: item, except: [:created_at, :updated_at]
   end
 
   def create

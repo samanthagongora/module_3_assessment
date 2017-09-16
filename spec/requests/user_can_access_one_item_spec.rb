@@ -14,7 +14,7 @@ RSpec.describe "As a user I can make an API call to a single Item" do
     expect(response["name"]).to_not be_nil
     expect(response["description"]).to_not be_nil
     expect(response["image_url"]).to_not be_nil
-    # expect(response["created_at"]).to be_nil
-    # expect(response["updated_at"]).to be_nil
+    expect(response["created_at"]).to be_nil
+    expect(response["updated_at"]).to be_nil
   end
 end
