@@ -9,7 +9,7 @@ class Api::V1::ItemsController < API::V1::ApplicationController
   end
 
   def create
-    render json: Item.create(item_params)
+    render status: 201, json: Item.create(item_params), except: [:created_at, :updated_at]
   end
 
   private

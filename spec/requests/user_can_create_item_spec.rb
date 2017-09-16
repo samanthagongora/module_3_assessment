@@ -3,8 +3,7 @@ require "rails_helper"
 RSpec.describe "User can make POST request to items" do
   it "can create item" do
     post "/api/v1/items", item: {name: "new name", description: "new description", image_url: "new image"}
-    expect(response).to redirect_to('/api/v1/items/1')
-    follow_redirect!
+
     expect(response).to be_successful
 
     response = JSON.parse(response.body)
