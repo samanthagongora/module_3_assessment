@@ -8,11 +8,4 @@ class Store
     @phone_number = data[:phone]
     @store_type = data[:storeType]
   end
-
-  def self.find(zipcode)
-    stores = BestBuyService.find_stores(zipcode)
-    stores.map do |raw_data|
-      Store.new(raw_data)
-    end
-  end
 end
