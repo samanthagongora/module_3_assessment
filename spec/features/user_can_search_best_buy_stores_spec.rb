@@ -9,6 +9,7 @@ RSpec.describe "User can search for Best Buy stores" do
       click_on 'Search'
 
       expect(current_path).to eq("/search")
+      expect(page).to have_content("17 Total Stores")
       expect(page).to have_css('.store', 10)
       within first('.store') do
         expect('.long_name').to_not be_nil
