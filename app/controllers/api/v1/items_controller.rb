@@ -1,15 +1,15 @@
 class Api::V1::ItemsController < API::V1::ApplicationController
   def index
-    render json: Item.all, except: [:created_at, :updated_at]
+    render json: Item.all
   end
 
   def show
     item = Item.find(params[:id])
-    render json: item, except: [:created_at, :updated_at]
+    render json: item
   end
 
   def create
-    render status: 201, json: Item.create(item_params), except: [:created_at, :updated_at]
+    render status: 201, json: Item.create(item_params)
   end
 
   def destroy
