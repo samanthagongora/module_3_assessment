@@ -6,8 +6,9 @@ RSpec.describe "Best Buy Service" do
       it "finds stores by zipcode" do
         VCR.use_cassette("service_can_return_data_spec.rb") do
           zipcode = 80203
-          stores = BestBuyService.find_stores(zipcode)
-          store = stores.first
+          store_data = BestBuyService.find_stores(zipcode)
+          store = store_data[:stores].first
+          stores = store_data[:stores]
 
           expect(stores.count).to eq(10)
 
