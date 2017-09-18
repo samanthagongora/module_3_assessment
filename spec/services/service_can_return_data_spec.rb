@@ -9,8 +9,10 @@ RSpec.describe "Best Buy Service" do
           store_data = BestBuyService.find_stores(zipcode)
           store = store_data[:stores].first
           stores = store_data[:stores]
+          total_stores = store_data[:total]
 
           expect(stores.count).to eq(10)
+          expect(total_stores).to eq(17)
 
           expect(store[:longName]).to be_a String
           expect(store[:city]).to be_a String
